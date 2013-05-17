@@ -1,0 +1,16 @@
+<package>
+  <description brief="fast">
+
+     FAST Corner Detection by Edward Rosten
+
+  </description>
+  <author>cforster</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.edwardrosten.com/work/fast.html</url>
+  <export>
+     <cpp cflags="-I${prefix}/include/" lflags="-L${prefix}/lib -lfast" />
+  </export>
+</package>
+
+
