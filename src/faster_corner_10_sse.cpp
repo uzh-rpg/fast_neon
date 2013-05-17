@@ -10,7 +10,7 @@
 #  include <emmintrin.h>
 #endif
 
-namespace Fast
+namespace fast
 {
   template <bool Aligned> void faster_corner_detect_10(const fast_byte* img, int img_width, int img_height, int img_stride,
                                                        short barrier, std::vector<fast_xy>& corners)

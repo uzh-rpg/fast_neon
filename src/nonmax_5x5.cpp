@@ -4,7 +4,7 @@
 #include <cmath>
 #include <fast/fast.h>
 
-namespace Fast
+namespace fast
 {
 
 short corner_score_dacuda(const fast_byte* img, const int *pointer_dir, short barrier, bool *type)

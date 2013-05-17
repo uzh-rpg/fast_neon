@@ -6,7 +6,7 @@ corner_pointers=2
 #include <fast/fast.h>
 #include <vector>
 
-namespace Fast
+namespace fast
 {
 
 static void make_offsets(int pixel[], int row_stride)

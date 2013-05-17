@@ -6,7 +6,7 @@
 #include <fast/fast.h>
 #include <vector>
 
-namespace Fast
+namespace fast
 {
 
 //This function has been moved from fast_corner.cxx. Look there

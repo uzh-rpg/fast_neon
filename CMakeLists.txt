@@ -1,7 +1,7 @@
 ################################################################################
 # Fast user build settings
 
-SET(IS_ARM FALSE)
+SET(IS_ARM TRUE)
 SET(BUILD_FAST_LIBRARY TRUE)
 
 ################################################################################
@@ -45,5 +45,11 @@ ELSE()
   LIST(APPEND SOURCES ${PROJECT_SOURCE_DIR}/src/faster_corner_10_sse.cpp)
 ENDIF()
 
-ADD_LIBRARY( ${PROJECT_NAME} SHARED ${SOURCES} )
+
+ADD_LIBRARY( fast SHARED ${SOURCES} )
 INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/include)
+
+# Build a test program for the fast detector
+FIND_PACKAGE( OpenCV REQUIRED )
+ADD_EXECUTABLE( test_fast ${PROJECT_SOURCE_DIR}/test/test.cpp )
+TARGET_LINK_LIBRARIES( test_fast fast ${OpenCV_LIBS} )

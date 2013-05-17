@@ -7,7 +7,7 @@
 #include <emmintrin.h>
 #endif
 
-namespace Fast
+namespace fast
 {
 
 /// Check if the pointer is aligned to the specified byte granularity
