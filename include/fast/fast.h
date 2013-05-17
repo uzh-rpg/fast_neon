@@ -3,7 +3,7 @@
 
 #include <vector>
 
-namespace Fast
+namespace fast
 {
 
 using ::std::vector;

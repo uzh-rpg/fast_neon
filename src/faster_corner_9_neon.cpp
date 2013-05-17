@@ -8,7 +8,7 @@
 #  include <arm_neon.h>
 #endif
 
-namespace Fast
+namespace fast
 {
 
 

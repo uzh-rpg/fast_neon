@@ -3,7 +3,7 @@
 #include <fast/fast.h>
 
 // This is mechanically generated code.
-namespace Fast
+namespace fast
 {
 
 static inline bool test_gt_set(int a, int b, int& min_diff)
