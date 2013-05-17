@@ -1,7 +1,7 @@
 ################################################################################
 # Fast user build settings
 
-SET(IS_ARM TRUE)
+SET(IS_ARM FALSE)
 SET(BUILD_FAST_LIBRARY TRUE)
 
 ################################################################################
@@ -45,5 +45,5 @@ ELSE()
   LIST(APPEND SOURCES ${PROJECT_SOURCE_DIR}/src/faster_corner_10_sse.cpp)
 ENDIF()
 
-ADD_LIBRARY( fast ${SOURCES} )
+ADD_LIBRARY( fast SHARED ${SOURCES} )
 INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/include)

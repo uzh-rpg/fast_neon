@@ -3174,7 +3174,7 @@ void fast_corner_score_10(
     -1 + img_stride * 3,
   };
   for(unsigned int n=0; n < corners.size(); n++)
-    scores[n] = fast_corner_score_10(&img[corners[n].y*img_stride + corners[n].x], pixel, threshold);
+    scores[n] = fast_corner_score_10(img + corners[n].y*img_stride + corners[n].x, pixel, threshold);
 }
 
 } // namespace Fast

@@ -17,25 +17,25 @@ struct fast_xy
 typedef unsigned char fast_byte;
 
 /// NEON optimized version of the corner 9
-void fast_corner_detect_9_NEON(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);     
+void fast_corner_detect_9_neon(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);     
 
 /// SSE2 optimized version of the corner 9
-void fast_corner_detect_9_SSE2(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);      
+void fast_corner_detect_9_sse2(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);      
 
 /// plain C++ version of the corner 9
 void fast_corner_detect_9(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners); 
 
 /// NEON optimized version of the corner 10
-void fast_corner_detect_10_NEON(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);     
+void fast_corner_detect_10_neon(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);     
 
 /// SSE2 optimized version of the corner 10
-void fast_corner_detect_10_SSE2(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);      
+void fast_corner_detect_10_sse2(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);      
 
 /// plain C++ version of the corner 10
 void fast_corner_detect_10(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners); 
 
 /// corner score 10
-short fast_corner_score_10(const fast_byte* img, const int img_stride, const std::vector<fast_xy>& corners);
+void fast_corner_score_10(const fast_byte* img, const int img_stride, const std::vector<fast_xy>& corners, const int threshold, std::vector<int>& scores);
 
 /// Nonmax Suppression on a 3x3 Window
 void fast_nonmax_3x3(const std::vector<fast_xy>& corners, const std::vector<int>& scores, std::vector<int>& nonmax_corners);

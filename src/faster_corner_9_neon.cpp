@@ -252,7 +252,7 @@ template <bool Aligned> void faster_corner_detect_9(const fast_byte* img, int im
    }
 }
 
-void fast_corner_detect_9_NEON(const fast_byte* img, int imgWidth, int imgHeight, int widthStep,
+void fast_corner_detect_9_neon(const fast_byte* img, int imgWidth, int imgHeight, int widthStep,
                                short barrier, std::vector<fast_xy>& corners)
 {
    if(imgWidth < 7 || imgHeight < 7)
