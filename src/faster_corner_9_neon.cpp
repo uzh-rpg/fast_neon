@@ -1,6 +1,6 @@
 #include <fast/fast.h>
 #include <fast/corner_9.h>
-#include <faster_corner_utilities.h>
+#include <fast/faster_corner_utilities.h>
 
 #ifndef __ARM_NEON__
 #  error "This file requires NEON support. Check your compiler flags."
@@ -261,7 +261,7 @@ void fast_corner_detect_9_NEON(const fast_byte* img, int imgWidth, int imgHeight
    }
    else if(imgWidth < 22)
    {
-      fast_corner_detect_plain_9(img, imgWidth, imgHeight, widthStep, barrier, corners);
+      fast_corner_detect_9(img, imgWidth, imgHeight, widthStep, barrier, corners);
       return;
    }
    else

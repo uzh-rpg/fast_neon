@@ -1,7 +1,7 @@
 #ifndef FAST_CORNER_UTILITIES_H
 #define FAST_CORNER_UTILITIES_H
 
-#if __ARM_NEON
+#if __ARM_NEON__
 #include <arm_neon.h>
 #elif __SSE2__
 #include <emmintrin.h>
