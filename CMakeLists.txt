@@ -53,3 +53,18 @@ INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/include)
 FIND_PACKAGE( OpenCV REQUIRED )
 ADD_EXECUTABLE( test_fast ${PROJECT_SOURCE_DIR}/test/test.cpp )
 TARGET_LINK_LIBRARIES( test_fast fast ${OpenCV_LIBS} )
+
+
+
+################################################################################
+# Create the fastConfig.cmake file for other cmake projects.
+GET_TARGET_PROPERTY( FULL_LIBRARY_NAME ${PROJECT_NAME} LOCATION )
+SET(fast_LIBRARIES ${FULL_LIBRARY_NAME} )
+SET(fast_LIBRARY_DIR ${PROJECT_BINARY_DIR} )
+SET(fast_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
+CONFIGURE_FILE( ${CMAKE_CURRENT_SOURCE_DIR}/fastConfig.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/fastConfig.cmake @ONLY IMMEDIATE )
+export( PACKAGE fast )
+
+INSTALL(DIRECTORY include/fast DESTINATION ${CMAKE_INSTALL_PREFIX}/include FILES_MATCHING PATTERN "*.h" )
+INSTALL(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/lib )
