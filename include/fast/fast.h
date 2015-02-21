@@ -2,6 +2,7 @@
 #define FAST_H
 
 #include <vector>
+#include <cstdint>
 
 namespace fast
 {
@@ -23,13 +24,42 @@ void fast_corner_detect_9_neon(const fast_byte* img, int imgWidth, int imgHeight
 void fast_corner_detect_9_sse2(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);      
 
 /// plain C++ version of the corner 9
-void fast_corner_detect_9(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners); 
+void fast_corner_detect_9(
+    const fast_byte* img,
+    const int imgWidth,
+    const int imgHeight,
+    const int widthStep,
+    const short barrier,
+    std::vector<fast_xy>& corners);
+
+/// plain masked C++ version of the corner 9
+void fast_corner_detect_9_masked(
+    const fast_byte* img,
+    const int imgWidth,
+    const int imgHeight,
+    const int widthStep,
+    const short barrier,
+    const std::vector<std::uint8_t>& occupancy,
+    const int occupancy_cell_size,
+    std::vector<fast_xy>& corners);
 
 /// NEON optimized version of the corner 10
 void fast_corner_detect_10_neon(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);     
 
 /// SSE2 optimized version of the corner 10
 void fast_corner_detect_10_sse2(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners);      
+
+/// SSE2 optimized version of the corner 10
+void fast_corner_detect_10_sse2_masked(
+    const fast_byte* img,
+    const int img_width,
+    const int img_height,
+    const int img_stride,
+    const short barrier,
+    const std::vector<std::uint8_t>& occupancy,
+    const int occupancy_cell_size,
+    std::vector<fast_xy>& corners);
+
 
 /// plain C++ version of the corner 10
 void fast_corner_detect_10(const fast_byte* img, int imgWidth, int imgHeight, int widthStep, short barrier, std::vector<fast_xy>& corners); 

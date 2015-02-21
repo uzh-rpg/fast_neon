@@ -26,6 +26,7 @@ catkin_package(
 # FAST library
 SET(SOURCES
 	src/fast_9.cpp
+  src/fast_9_masked.cpp
 	src/fast_10.cpp
 	src/fast_10_score.cpp
 	src/nonmax_3x3.cpp
@@ -33,12 +34,12 @@ SET(SOURCES
 	include/fast/corner_10.h
 	include/fast/fast.h
 	include/fast/faster_corner_utilities.h
-	#${PROJECT_SOURCE_DIR}/src/nonmax_5x5.cpp
 )
 IF(DEFINED ENV{ARM_ARCHITECTURE})
   LIST(APPEND SOURCES ${PROJECT_SOURCE_DIR}/src/faster_corner_9_neon.cpp)
 ELSE()
   LIST(APPEND SOURCES ${PROJECT_SOURCE_DIR}/src/faster_corner_10_sse.cpp)
+  LIST(APPEND SOURCES ${PROJECT_SOURCE_DIR}/src/faster_corner_10_sse_masked.cpp)
 ENDIF()
 
 

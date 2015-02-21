@@ -30,23 +30,30 @@ static void make_offsets(int pixel[], int row_stride)
 }
 
 
-void fast_corner_detect_9(
+void fast_corner_detect_9_masked(
     const fast_byte* img,
     const int imgWidth,
     const int imgHeight,
     const int widthStep,
     const short barrier,
+    const std::vector<std::uint8_t>& occupancy,
+    const int occupancy_cell_size,
     std::vector<fast_xy>& corners)
 {
    int pixel[16];
    int x, y;
+   const int stride=(imgWidth/occupancy_cell_size+1);
 
    make_offsets(pixel, widthStep);
 
    for(y=3; y < imgHeight - 3; ++y)
    {
+      const std::uint8_t* occ = &occupancy[(y/occupancy_cell_size)*stride];
       for(x=3; x < imgWidth - 3; ++x)
       {
+         if(occ[x/occupancy_cell_size] > 0)
+           continue;
+
          const fast_byte* p = img + y*widthStep + x;
 
          const short cb = *p + barrier;
