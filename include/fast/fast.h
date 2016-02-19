@@ -67,7 +67,7 @@ void fast_nonmax_5x5(const fast_byte* img, int imgWidth, int imgHeight, int widt
                      short barrier, DarkCorners& darkCorners, BrightCorners& brightCorners);
 
 /// special corner score. Sum of the absolute radiometric differences between the center pixel and the pixels on the circle.
-short corner_score_dacuda(const fast_byte* img, const int *pointer_dir, short barrier, bool* type);
+short corner_score_test(const fast_byte* img, const int *pointer_dir, short barrier, bool* type);
 */   
 
 } // namespace Fast

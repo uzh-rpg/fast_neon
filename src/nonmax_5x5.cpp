@@ -7,7 +7,7 @@
 namespace fast
 {
 
-short corner_score_dacuda(const fast_byte* img, const int *pointer_dir, short barrier, bool *type)
+short corner_score_test(const fast_byte* img, const int *pointer_dir, short barrier, bool *type)
 {
    /*The score for a positive feature is sum of the difference between the pixels
      and the barrier if the difference is positive. Negative is similar.
