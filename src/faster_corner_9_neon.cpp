@@ -266,7 +266,7 @@ void fast_corner_detect_9_neon(const fast_byte* img, int imgWidth, int imgHeight
    }
    else
    {
-      // FIXME: why did dacuda remove the unaligned version?
+      // FIXME: why was unaligned version removed?
       // corners.reserve(512);
       // if (is_aligned<16>(img) && is_aligned<16>(img + widthStep))
       //    faster_corner_detect_9<true>(img, imgWidth, imgHeight, widthStep, barrier, corners);
