@@ -21,6 +21,7 @@ set(HEADERS
 
 set(SOURCES
   src/fast_9.cpp
+  src/fast_9_score.cpp
   src/fast_10.cpp
   src/fast_10_score.cpp
   src/nonmax_3x3.cpp

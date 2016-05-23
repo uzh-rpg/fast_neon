@@ -37,6 +37,9 @@ void fast_corner_detect_10(const fast_byte* img, int imgWidth, int imgHeight, in
 /// corner score 10
 void fast_corner_score_10(const fast_byte* img, const int img_stride, const std::vector<fast_xy>& corners, const int threshold, std::vector<int>& scores);
 
+/// corner score 9
+void fast_corner_score_9(const fast_byte* img, const int img_stride, const std::vector<fast_xy>& corners, const int threshold, std::vector<int>& scores);
+
 /// Nonmax Suppression on a 3x3 Window
 void fast_nonmax_3x3(const std::vector<fast_xy>& corners, const std::vector<int>& scores, std::vector<int>& nonmax_corners);
 
