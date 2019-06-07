@@ -2,7 +2,7 @@
 #include <fast/corner_9.h>
 #include <fast/faster_corner_utilities.h>
 
-#ifndef __ARM_NEON__
+#if !defined(__ARM_NEON__) && !defined(__ARM_NEON)
 #  error "This file requires NEON support. Check your compiler flags."
 #else
 #  include <arm_neon.h>
