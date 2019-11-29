@@ -6,6 +6,8 @@ SET(CMAKE_CXX_FLAGS "-std=c++11 -Wall -Werror -Wno-unused-variable -Wno-unused-b
 IF(DEFINED ENV{ARM_ARCHITECTURE})
 	IF("$ENV{ARM_ARCHITECTURE}" STREQUAL "aarch64")
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native")
+        ELSEIF("$ENV{ARM_ARCHITECTURE}" STREQUAL "armv8")
+                SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native")
 	ELSE()
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -mfpu=neon -march=armv7-a")
 	ENDIF()	
