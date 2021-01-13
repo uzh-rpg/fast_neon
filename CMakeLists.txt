@@ -2,6 +2,7 @@ project(fast)
 cmake_minimum_required(VERSION 2.8.3)
 
 SET(CMAKE_CXX_FLAGS "-std=c++11 -Wall -Werror -Wno-unused-variable -Wno-unused-but-set-variable -Wno-unknown-pragmas")
+set(ENV{ARM_ARCHITECTURE} aarch64)
 
 IF(DEFINED ENV{ARM_ARCHITECTURE})
 	IF("$ENV{ARM_ARCHITECTURE}" STREQUAL "aarch64")
