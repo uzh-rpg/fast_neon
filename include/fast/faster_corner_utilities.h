@@ -1,7 +1,7 @@
 #ifndef FAST_CORNER_UTILITIES_H
 #define FAST_CORNER_UTILITIES_H
 
-#if __ARM_NEON__
+#if __ARM_NEON__ || __ARM_NEON
 #include <arm_neon.h>
 #elif __SSE2__
 #include <emmintrin.h>
@@ -40,7 +40,7 @@ struct Greater
    }
 };
 
-#if __ARM_NEON__
+#if __ARM_NEON__ || __ARM_NEON
 
 // FIXXXME: there is a VCEQ instruction that compares to #0 by default,
 // so we could get rid of the zero register. However, I didn't find

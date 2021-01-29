@@ -62,7 +62,7 @@ int main (int /*argc*/, char** /*argv*/)
    printf("PLAIN version took %f seconds (average over %d trials).\n", time_accumulator/((double)NUM_TRIALS), NUM_TRIALS );
    std::cout << std::endl << "Fast feature detector test: "<< corners.size() << " features detected." << std::endl;
 
-#if __ARM_NEON__
+#if __ARM_NEON__ || __ARM_NEON
    std::cout << "Testing NEON version" << std::endl;
    time_accumulator = 0;
    for (int i = 0; i < NUM_TRIALS; ++i) {
